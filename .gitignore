@@ -279,5 +279,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,macos,windows,vim,python,linux
-data/*.csv
-*.csv
+
