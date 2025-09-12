@@ -89,8 +89,9 @@ project-repo/
 ## 5. Result
 
 ### Leader Board
+<img width="836" height="657" alt="image" src="https://github.com/user-attachments/assets/e3c317b3-3f73-4ab5-8357-58573f62823b" />
 
-- _Insert Leader Board Capture_
+
 - _Write rank and score_
 
 ### Presentation
