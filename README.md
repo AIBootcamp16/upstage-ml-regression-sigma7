@@ -77,24 +77,72 @@ project-repo/
 
 ### EDA
 
-- _Describe your EDA process and step-by-step conclusion_
+**과정**
+
+계약년(계약년) 기준으로 연도별 데이터 분포 확인
+
+결측치 비율 확인 (예: 면적 정보, 위치 좌표, 도로명 등)
+
+주요 피처(전용면적, 층, 위치, 금리 등)와 타깃(target) 간 상관관계 시각화
+
+타깃값의 분포 확인 (왜도, 이상치 존재 여부 확인 → 로그 변환 고려)
+
+**결론**
+
+데이터가 특정 연도(2014~2020)에 집중되어 있어 불균형 존재
+
+일부 피처에서 결측치와 이상치 발견 → 전처리 필요
+
+집값 분포가 한쪽으로 치우쳐 있음 → 정규화/변환 필요
 
 ### Data Processing
 
-- _Describe data processing process (e.g. Data Labeling, Data Cleaning..)_
+**과정**
+
+- *데이터 라벨링*: 타깃 변수(거래금액) 정의
+
+- *데이터 클리닝*: 결측치 처리, 불필요한 피처 제거
+
+**Feature Engineering**:
+
+- 연도(계약년) 기반 샘플 수 가중치 부여 (중앙값 / 해당연도 샘플 수)
+
+- 금리, 거래량, 전세-매매 갭, 공급량 등 파생변수 추가
+
+- 카테고리형 피처(아파트명, 동) → 타깃 인코딩
+
+- *스케일링/정규화*: 로그 변환(log1p) 적용해 타깃 분포 안정화
 
 ## 4. Modeling
 
 ### Model descrition
 
-- _Write model information and why your select this model_
+**LightGBM** 선택
+
+- 범주형/수치형 혼합 데이터에 강함
+
+- 학습 속도 빠르고 성능 우수
+
+- 불균형 데이터에 가중치 적용 가능
 
 ### Modeling Process
 
-- _Write model train and test process with capture_
+**Train / Validation Split: 시간 기반 분할(TimeSeriesSplit) 적용**
+
+- 가중치 적용 학습: 연도별 샘플 수 불균형 완화
+
+- 하이퍼파라미터 튜닝: Optuna 활용 (learning_rate, num_leaves, max_depth 등)
+
+- 평가 지표: *RMSE* (Root Mean Squared Error)
 
 ## 5. Result
+- Baseline Model: RMSE ≈ 17,300
 
+- 가중치 적용 후: RMSE ≈ 14051.0850
+
+- 최종 보드 결과: RMSE ≈ 11861.9779 (성능 크게 향상)
+
+- 결론: 연도별 불균형 해소를 위한 가중치 적용이 성능 개선에 크게 기여
 ### Leader Board
 <img width="836" height="657" alt="image" src="https://github.com/user-attachments/assets/e3c317b3-3f73-4ab5-8357-58573f62823b" />
 
@@ -108,4 +156,6 @@ submission count: 54
 
 ### Reference
 
-- _Insert related reference_ 현태님
+- LightGBM 공식 문서 (https://lightgbm.readthedocs.io)
+
+- Optuna 하이퍼파라미터 튜닝 가이드 (https://optuna.org)
