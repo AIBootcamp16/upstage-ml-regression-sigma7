@@ -152,10 +152,12 @@ submission count: 54
 
 ### Presentation
 
-- _Insert your presentaion file(pdf) link_
+- https://docs.google.com/presentation/d/1NJhVQmGhc4Uaw99tB50aXflq22P-sQo7/edit?slide=id.p7#slide=id.p7
 
 ### Reference
 
 - LightGBM 공식 문서 (https://lightgbm.readthedocs.io)
 
 - Optuna 하이퍼파라미터 튜닝 가이드 (https://optuna.org)
+
+- Kaggle 공식 사이트 (https://kaggle.com) 
