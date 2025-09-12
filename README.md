@@ -99,9 +99,9 @@ project-repo/
 
 **과정**
 
-- *데이터 라벨링*: 타깃 변수(거래금액) 정의
+- **데이터 라벨링**: 타깃 변수(거래금액) 정의
 
-- *데이터 클리닝*: 결측치 처리, 불필요한 피처 제거
+- **데이터 클리닝**: 결측치 처리, 불필요한 피처 제거
 
 **Feature Engineering**:
 
@@ -133,7 +133,7 @@ project-repo/
 
 - 하이퍼파라미터 튜닝: Optuna 활용 (learning_rate, num_leaves, max_depth 등)
 
-- 평가 지표: *RMSE* (Root Mean Squared Error)
+- 평가 지표: **RMSE** (Root Mean Squared Error)
 
 ## 5. Result
 - Baseline Model: RMSE ≈ 17,300
