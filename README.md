@@ -18,14 +18,14 @@ Upstage AI Stages에서 진행하는
 -   가상환경(콘다 등)
 
 ### Requirements
-matplotlib==3.7.1
-numpy==1.23.5
-pandas==1.5.3
-scipy==1.11.3
-seaborn==0.12.2
-scikit-learn==1.2.2
-statsmodels==0.14.0
-tqdm==4.66.1
+-   matplotlib==3.7.1
+-   numpy==1.23.5
+-   pandas==1.5.3
+-   scipy==1.11.3
+-   seaborn==0.12.2
+-   scikit-learn==1.2.2
+-   statsmodels==0.14.0
+-   tqdm==4.66.1
 
 ## 1. Competiton Info
 
@@ -42,8 +42,6 @@ tqdm==4.66.1
 ## 2. Components
 
 ### Directory
-
-- _Insert your directory structure_
 
 ```
 project-repo/
